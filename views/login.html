@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 페이지</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="../control/login-function.js"></script>
+
+  </head>
+    <body>
+      
+        <section class="hero is-warning">
+            <div class="hero-body">
+              <p class="title">
+                로그인 페이지
+              </p>
+              <!-- <p class="subtitle" style="text-align: right;">
+                환영합니다 ''님!
+              </p> -->
+            </div>
+        </section>
+        
+        <br>
+
+        <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input id="input-id" class="input is-normal is-rounded" type="text" placeholder="아이디를 입력해주세요.">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="password-id" class="input is-normal is-rounded" type="password" placeholder="비밀번호를 입력해주세요.">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+        </div>
+        
+        <button onclick="loginButton()" class="button is-danger is-rounded">로그인</button>
+        <button onclick="registerButton()" class="button is-danger is-rounded">회원가입</button>
+        <button onclick="homeButton()" class="button is-danger is-rounded">메인 페이지</button>
+
+    </body>
+</html>
