@@ -6,12 +6,13 @@
     <title>전체 게시글 조회 페이지</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../control/index-function.js"></script>
 
   </head>
     <body>
       
-        <section class="hero is-warning">
+        <section class="hero is-warning" style="margin-bottom: 13px;">
             <div class="hero-body" style="padding-bottom: 8px;">
               <p class="title">
                 전체 게시글 조회 페이지
@@ -22,12 +23,25 @@
             </div>
             <hr style="margin-bottom: 10px; margin-top: 10px; color: black;">
             <div style="padding-bottom: 10px;">
-                <button onclick="writeButton()" class="button is-danger is-rounded">글쓰기</button>
-                <button onclick="loginButton()" class="button is-danger is-rounded">로그인</button>
-                <button onclick="logoutButton()" class="button is-danger is-rounded">로그아웃</button>
-                <button onclick="registerButton()" class="button is-danger is-rounded">회원가입</button>
+                <button onclick="writeButton()" class="button is-danger">글쓰기</button>
+                <button onclick="loginButton()" class="button is-danger">로그인</button>
+                <button onclick="logoutButton()" class="button is-danger">로그아웃</button>
+                <button onclick="registerButton()" class="button is-danger">회원가입</button>
             </div> 
         </section>
+
+        <div class="table-container">
+          <table class="table is-fullwidth is-hoverable">
+            <tfoot>
+              <tr>
+                <th style="width: 217px;"><title="board-date">게시글번호</th>
+                <th ><title="poosting-name">제목</th>
+                <th style="width: 217px;"><title="board-date">작성자</th>
+                <th style="width: 217px;"><title="nickName">작성날짜</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
   
     </body>
 </html>

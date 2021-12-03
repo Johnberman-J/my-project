@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입 페이지</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../control/register-function.js"></script>
+
+  </head>
+  <body>
+
+    <section class="hero is-warning">
+        <div class="hero-body">
+          <p class="title">
+            회원가입 페이지
+          </p>
+          <!-- <p class="subtitle" style="text-align: right;">
+            환영합니다 ''님!
+          </p> -->
+        </div>
+    </section>
+    <br>
+    <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input id="userID" class="input" type="text" placeholder="사용하실 아이디를 입력해주세요.">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control has-icons-left">
+          <input id="password" class="input" type="password" placeholder="비밀번호를 입력해주세요.">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+        <p class="control has-icons-left">
+            <input id="rePassword" class="input" type="password" placeholder="비밀번호를 다시 입력해주세요.">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+      </div>
+
+      <div class="field">
+        <p class="control">
+          <button class="button is-danger" onclick="registerButton()">
+            회원가입
+          </button>
+          <button class="button is-danger" onclick="homeButton()">
+            메인 페이지
+          </button>
+        </p>
+      </div>
+
+  </body>
+</html>
