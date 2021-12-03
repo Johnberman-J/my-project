@@ -1,11 +1,16 @@
 const express = require("express");
-const app = express();
-const router = express.Router();
+const render = express.Router();
 
-app.set('views', __dirname + '/views');   
+render.get("/", (req, res) => {
+    res.render("index");
+});
 
-app.get("/register", (req, res) => {
+render.get("/register", (req, res) => {
     res.render("register");
+});
+
+render.get("/login", (req, res) => {
+    res.render("login");
 })
 
 module.exports = render;

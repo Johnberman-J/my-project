@@ -5,4 +5,4 @@ router.get("/register", (req, res) => {
     res.send("성공");
 })
 
-module.exports = _router;
+module.exports = router;
