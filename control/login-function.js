@@ -6,9 +6,9 @@ function loginButton() {
 };
 
 function registerButton() {
-    // location.href = "/register"
+    location.href = "/register"
 };
 
 function homeButton() {
-    location.href = "./index.html";
+    location.href = "/";
 };

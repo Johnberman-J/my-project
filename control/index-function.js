@@ -3,7 +3,7 @@ function writeButton() {
 };
 
 function loginButton() {
-    location.href = "login.html";
+    location.href = "/login";
 };
 
 function logoutButton() {
@@ -11,5 +11,5 @@ function logoutButton() {
 };
 
 function registerButton() {
-    location.href = "register.html";
+    location.href = "/register";
 };

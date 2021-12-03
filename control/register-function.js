@@ -3,7 +3,6 @@ function registerButton() {
     const userID = $("#userID").val();
     const password = $("#password").val();
     const rePassword = $("#rePassword").val();
-    console.log(userID,password,rePassword);
 
     $.ajax({
         type: "POST",
@@ -11,15 +10,20 @@ function registerButton() {
         data: {
             userID,
             password,
-            rePassword
+            rePassword,
         },
         success: (res) => {
-            
+            alert(res["msg"]);
+            window.location.href="/login";
+        },
+        error: (error) => {
+            alert(error.responseJSON.err);
+            return;
         }
     })
 };
 
 
 function homeButton() {
-    location.href = "./index.html";
+    window.location.href="/";
 };

@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", render);
 app.use("/api", router);
+app.use("/control", express.static(path.join(__dirname,"control")));
 
 // app.use("요청경로", express.static("실제경로"))
 // 127.0.0.1:3000/index.html  >  views/index.html 이런식으로 처리해줌 static은 정적파일은 다 처리해줌.
