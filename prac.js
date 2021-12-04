@@ -1,10 +1,3 @@
-const jwt = require("jsonwebtoken");
-const userID = "Jason";
+const date = new Date().toISOString().substring(0,10);
 
-const token = jwt.sign(userID, "secretkey");
-
-console.log(token);
-
-const decodedID = jwt.verify(token, "secretkey");
-
-console.log(decodedID);
+console.log(date);

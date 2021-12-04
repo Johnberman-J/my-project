@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
         res.locals = userID;
         next();
     } catch(error) {
-        res.send({ err: "사용자 정보가 유효하지 않습니다!"});
+        res.status(401).send({ err: "사용자 정보가 유효하지 않습니다!"});
         return;
     }   
 }

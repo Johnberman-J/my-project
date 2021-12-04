@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const users = require("../schema/userSchema");
+const boards = require("../schema/boardSchema");
 const registerValidation = require("../schema/registerValidation");
 const jwt = require("jsonwebtoken");
 const jwtAuth = require("../model/jwtAuth");
@@ -56,8 +57,19 @@ router.route("/boards")
         const userID = res.locals;
         res.send(userID);
     })
-    // .post( async (req, res) => {
-    //     const 
-    // })
+    .post( async (req, res) => {
+        const { userID, title, contents, date } = req.body;
+        try {
+            if(!title || !contents) {
+                res.status(400).send({ err: "제목 또는 내용을 입력해주세요!"});
+                return;
+            }
+            const board = new boards( { userID, title, contents, date } );
+            await board.save();
+            res.status(200).send({ msg: "게시글이 등록되었습니다!"});
+        } catch(error) {
+            res.status(400);
+        }
+    })
 
 module.exports = router;
