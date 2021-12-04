@@ -7,7 +7,12 @@ function loginButton() {
 };
 
 function logoutButton() {
-
+    if(confirm("로그아웃 하시겠습니까?")) {
+        localStorage.clear();
+        location.href = "/";
+    } else {
+        return;
+    }
 };
 
 function registerButton() {

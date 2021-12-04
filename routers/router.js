@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const users = require("../schema/userSchema");
-const registerValidation = require("../schema/registerValidation")
+const registerValidation = require("../schema/registerValidation");
+const jwt = require("jsonwebtoken");
+const jwtAuth = require("../model/jwtAuth");
 
 // 회원가입을 위한 api
 router.post("/register", registerValidation, async (req, res) => {
@@ -30,6 +32,23 @@ router.post("/register", registerValidation, async (req, res) => {
         res.status(400).send({ err: "닉네임 또는 비밀번호를 확인해주세요!" })
         return;
     }
-})
+});
+
+// 로그인 api
+router.post("/login", async (req, res) => {
+    const { userID, password } = req.body;
+    const existUser = await users.findOne({ userID, password });
+    try {
+        if(!existUser) {
+            res.status(401).send({err: "존재하지 않는 사용자 정보입니다!"});
+            return;
+        }
+        const token = jwt.sign(userID, "this-is-secret-key");
+        res.send(token);
+    } catch(error) {
+        res.status(401);
+        return;
+    }
+});
 
 module.exports = router;

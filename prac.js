@@ -1,7 +1,10 @@
-try {
-    if(true) {
-        throw new Error("이미 존재하는 닉네임입니다.");
-    }        
-} catch(Error) {
-    console.log(Error);
-}
+const jwt = require("jsonwebtoken");
+const userID = "Jason";
+
+const token = jwt.sign(userID, "secretkey");
+
+console.log(token);
+
+const decodedID = jwt.verify(token, "secretkey");
+
+console.log(decodedID);
