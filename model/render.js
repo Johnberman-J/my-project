@@ -11,6 +11,10 @@ render.get("/register", (req, res) => {
 
 render.get("/login", (req, res) => {
     res.render("login");
-})
+});
+
+render.get("/boards", (req, res) => {
+    res.render("board");
+});
 
 module.exports = render;

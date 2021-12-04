@@ -12,7 +12,7 @@ function loginButton() {
         success: (res) => {
             alert(`환영합니다 ${userID}님!`);
             const token = res;
-            localStorage.setItem("userToken",token);
+            localStorage.setItem("user_token",token);
             location.href = "/";
         },
         error: (error) => {

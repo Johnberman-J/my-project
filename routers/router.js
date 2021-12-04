@@ -43,12 +43,21 @@ router.post("/login", async (req, res) => {
             res.status(401).send({err: "존재하지 않는 사용자 정보입니다!"});
             return;
         }
-        const token = jwt.sign(userID, "this-is-secret-key");
+        const token = jwt.sign(userID, "secret-key");
         res.send(token);
     } catch(error) {
         res.status(401);
         return;
     }
 });
+
+router.route("/boards")
+    .get(jwtAuth, async (req, res) => {
+        const userID = res.locals;
+        res.send(userID);
+    })
+    // .post( async (req, res) => {
+    //     const 
+    // })
 
 module.exports = router;

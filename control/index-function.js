@@ -1,5 +1,5 @@
 function writeButton() {
-
+    location.href = "/boards";
 };
 
 function loginButton() {

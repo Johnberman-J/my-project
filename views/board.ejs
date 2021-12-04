@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 작성 페이지</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../control/board-function.js"></script>
+
+  </head>
+  <body>
+    <section class="hero is-warning" style="margin-bottom: 13px;">
+        <div class="hero-body" style="padding-bottom: 8px;">
+          <p class="title">
+            게시글 작성 페이지
+          </p>
+          <p class="subtitle" style="text-align: right;">
+            환영합니다 ''님!
+          </p>
+        </div>
+    </section>
+    
+    <input id="title" class="input is-success" type="text" placeholder="제목을 입력해 주세요.">
+    <br><br>
+
+    <p>
+      <div class="field">
+        <div class="control">
+          <textarea id="contents" class="textarea is-large" placeholder="내용을 입력해 주세요." style="height: 353px;"></textarea>
+        </div>
+      </div>
+    </p>
+
+    <div class="field">
+      <p class="control">
+        <button class="button is-danger" onclick="addboard()">
+          작성완료
+        </button>
+        <button class="button is-danger" onclick="homeButton()">
+          메인 페이지
+        </button>
+      </p>
+    </div>
+
+  </body>
+</html>

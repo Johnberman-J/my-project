@@ -1,6 +1,14 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = async (req, res, next) => {
-    console.log("이곳을 지나서");
-    next();
+    try {
+        const token = req.headers["authorization"];
+        const [type, encodedToken] = token.split(" ");  
+        const userID = jwt.verify(encodedToken, "secret-key");
+        res.locals = userID;
+        next();
+    } catch(error) {
+        res.send({ err: "사용자 정보가 유효하지 않습니다!"});
+        return;
+    }   
 }
