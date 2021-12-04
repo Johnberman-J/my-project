@@ -18,7 +18,7 @@ router.post("/register", registerValidation, async (req, res) => {
             })
             return;
         }
-        if(password.includes(userID)) {
+        if(userID.includes(password)) {
             res.status(412).send({
                 err: "패스워드에 닉네임이 포함되어 있습니다!"
             })
@@ -61,7 +61,7 @@ router.route("/boards")
         const { userID, title, contents, date } = req.body;
         try {
             if(!title || !contents) {
-                res.status(400).send({ err: "제목 또는 내용을 입력해주세요!"});
+                res.status(400).send({ err: "제목과 내용을 입력해주세요!"});
                 return;
             }
             const board = new boards( { userID, title, contents, date } );
